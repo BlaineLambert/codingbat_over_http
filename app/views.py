@@ -4,26 +4,26 @@ from django.http.request import HttpRequest
 
 # Create your views here.
 
-def near_hundred(request: HttpRequest, num) -> HttpResponse:
+def near_hundred(request: HttpRequest, num: HttpRequest) -> HttpResponse:
     if abs(num - 100) <= 10 or abs(num - 200) <= 10:
         return HttpResponse(True)
     else:
         return HttpResponse(False)
     
-def string(request: HttpRequest, char) -> HttpResponse:
+def string(request: HttpRequest, char: HttpRequest) -> HttpResponse:
     result = ""
     for i in range(len(char)):
         result += char[:i + 1]
 
     return HttpResponse(result)
 
-def counter(request: HttpRequest, list) -> HttpResponse:
+def counter(request: HttpRequest, list: HttpRequest) -> HttpResponse:
     cat_count = list.count("cat")
     dog_count = list.count("dog")
 
     return HttpResponse(cat_count == dog_count)
 
-def numcount(request: HttpRequest, num1, num2, num3) -> HttpResponse:
+def numcount(request: HttpRequest, num1: HttpRequest, num2: HttpRequest, num3: HttpRequest) -> HttpResponse:
     if num1 == num2 and num1 == num3 and num2 == num3:
         return HttpResponse(0)
     if num1 == num2 and num1 != num3 or num1 == num2 and num2 != num3:
