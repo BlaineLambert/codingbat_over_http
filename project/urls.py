@@ -19,9 +19,9 @@ from django.urls import path
 from app.views import near_hundred, string, counter, numcount
 
 urlpatterns = [
-    path("numbers/<int:num1>/<int:num2>/<int:num3>", numcount),
-    path("catdogcheck/<list>", counter),
-    path("hundred/<int:num>", near_hundred),
-    path("string/<str:char>", string),
+    path("logic-2/lone-sum/<int:num1>/<int:num2>/<int:num3>", numcount),
+    path("string-2/cat-dog/<list>", counter),
+    path("warmup-1/near-hundred/<int:num>", near_hundred),
+    path("warmup-2/string-splosion/<str:char>", string),
     path("admin/", admin.site.urls),
 ]
